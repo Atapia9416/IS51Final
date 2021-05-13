@@ -32,4 +32,33 @@ get the amount of scores that are above average by testing each number and seein
 
 run grades above average function
 
+
+
 """
+
+
+infile = open("Final.txt", 'r')
+grades = [line.rstrip() for line in infile]
+infile.close()
+for all in range(len(grades)):
+     grades[all] = int(grades[all])
+
+averagegrade = sum(grades)/ len(grades)
+grade = averagegrade
+
+def main():
+
+     print("Number of Grades:", len(grades))
+     print("Average grade:", averagegrade)
+
+def calculate_percent_above_average():
+     test = 0 
+     for avgtest in grades:
+         if avgtest > averagegrade:
+             test += 1
+     Percentabove= (100 * test / len(grades))
+
+     print("Percentage of grades above aveage: {0:.2f}%"
+         .format(Percentabove))  
+main()
+calculate_percent_above_average()
